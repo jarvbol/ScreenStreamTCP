@@ -1,7 +1,7 @@
 # ScreenStreamTCP
 A lightweight Python utility for streaming your screen to a remote machine via TCP socket. Uses [Tuna](https://tuna.am/) for public tunneling, making it accessible from anywhere without complex network setup.
 
-## How It Works
+##  How It Works
 
 1. **Server** listens on a local port (default: 5000).
 2. **Tuna** creates a public TCP tunnel to that port.
@@ -22,7 +22,7 @@ A lightweight Python utility for streaming your screen to a remote machine via T
 
 ---
 
-## 📦 Installation
+##  Installation
 
 Install dependencies:
 
@@ -36,7 +36,7 @@ pip install opencv-python numpy mss
 
 ---
 
-## Setup & Usage
+##  Setup & Usage
 
 ### Step 1:  Create a Public Tunnel with Tuna
 In a separate terminal, start the Tuna tunnel:
@@ -66,17 +66,17 @@ Note: The dynamically assigned port (29498 in the example) is critical — you m
 On the machine whose screen you want to stream:
 
  ```bash
-python3 server.py
+python3 client.py
 ```
 
 You will need to enter the public port assigned by Tuna (e.g., 29498).
 
 Once connected, the server will begin displaying the live screen feed.
-Important: The client connects to the public endpoint created by Tuna, which forwards traffic to your local server. 
+> Important: The client connects to the public endpoint created by Tuna, which forwards traffic to your local server. 
 
 ---
 
-## Architecture Overview
+##  Architecture Overview
 
 ### Server (server.py)
 * Listens for TCP connections on localhost.
@@ -92,7 +92,7 @@ Important: The client connects to the public endpoint created by Tuna, which for
 
 ---
 
-## Limitations & Notes
+##  Limitations & Notes
 
 * No Encryption: Data is sent unencrypted. Not suitable for sensitive content.
 * Latency: Depends on network speed and CPU performance. Adjust JPEG quality for better FPS.
